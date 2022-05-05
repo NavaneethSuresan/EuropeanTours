@@ -1,12 +1,15 @@
-import axios from 'axios';
+import axios from "axios";
 const LOGIN_USER_KEY = 'WD_FORUM_LOGIN_USER_KEY';
 
 var baseURL;
+// if (process.env.REACT_APP_ENVIRONMENT && process.env.REACT_APP_ENVIRONMENT === 'PRODUCTION') {
+//     baseURL = process.env.REACT_APP_API_BASE_URL;
+// } else {
+//     baseURL = 'https://teashop-backend1.herokuapp.com/';
+// }
 if (process.env.REACT_APP_ENVIRONMENT && process.env.REACT_APP_ENVIRONMENT === 'PRODUCTION') {
     baseURL = process.env.REACT_APP_API_BASE_URL;
-} else {
-    baseURL = 'https://teashop-backend1.herokuapp.com/';
-}
+} else baseURL = 'http://127.0.0.1:8000';
 
 const api = axios.create({
     baseURL: baseURL,
@@ -32,35 +35,39 @@ api.interceptors.request.use(
 );
 
 export default class API {
-    getPosts = params => {
-        return api
-            .get('/posts/', { params })
-            .then(response => {
-                return response.data;
-            })
-            .catch(error => {
-                throw new Error(error);
-            });
-    };
-    addPost = postBody => {
-        const formData = new FormData();
+  getPlaces = async (search, category) => {
+    let url = "/places/";
+    let query = new URLSearchParams();
+    if (search) {
+      query.append("search", search);
+    }
+    if (category) {
+      query.append("category", category);
+    }
 
-        for (const key in postBody) {
-            formData.append(key, postBody[key]);
-        }
+    if (query.toString() != "") {
+      url += "?" + query.toString();
+    }
 
-        return api
-            .post('/posts/add/', formData)
-            .then(response => {
-                return response.data;
-            })
-            .catch(error => {
-                throw new Error(error);
-            });
-    };
-    deletePost = id => {
-        return api.delete(`/posts/delete/${id}/`).catch(error => {
-            throw new Error(error);
-        });
-    };
+    const places = await api
+      .get(url)
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+    return places;
+  };
+  getCategories = async () => {
+    const categories = await api
+      .get("/categories/")
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+    return categories;
+  };
 }

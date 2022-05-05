@@ -1,141 +1,524 @@
-/*
-Common
-************************************/
-
-html,
-body {
-    height: 100%;
-    font-family: sans-serif;
+* {
+    padding: 0;
+    margin: 0;
+    font-family: raleway;
 }
 
-.content {
-    width: 600px;
-    height: 100%;
-    margin: 0 auto;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+/************** FIRST PAGE
+*******************/
+nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
-
-@media screen and (max-width: 500px) {
-}
-
-/*
-Posts
-************************************/
-
-.post_form {
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-}
-
-.post_form input {
-    width: 96%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-.post_form textarea {
-    width: 96%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-.post_form .upload-area {
-    width: 96%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
+nav .logo {
+    width: 58%;
     text-align: center;
 }
 
-.post_form button {
+/****Navbar**/
+
+nav .navbar p a {
+    text-decoration: none;
+    color: black;
+}
+#nic {
+    text-decoration: none;
+    color: #08aeea;
+}
+nav .logo img {
+    width: 7vw;
+}
+nav .navbar {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
+    gap: 4%;
+    font-size: 1.3vw;
+}
+.firstpage img {
+    width: 100%;
+}
+#imgice {
+    width: 77%;
+    position: relative;
+}
+#close {
+    width: 2vw;
 }
 
-.upload-image {
+.shade {
+    background-color: rgb(85, 194, 170);
+    top: 0%;
+    width: 100%;
+    height: 66vw;
+    position: absolute;
+    opacity: 0.35;
+}
+.firstpage {
+    position: relative;
+}
+.input {
+    position: absolute;
+    top: 48%;
+    left: 38%;
+    text-align: center;
+}
+.input input {
+    width: 80%;
+    border-radius: 20px;
+    height: 2%;
+    padding: 2% 0 2% 4%;
+    font-size: 1vw;
+}
+.input p {
+    font-size: 2.5vw;
+    padding-bottom: 3%;
+}
+#search {
+    width: 1vw;
+    position: absolute;
+    top: left;
+    right: 16%;
+    top: 72%;
+}
+.cols {
+    padding: 0 0 0 0;
+    text-align: center;
+}
+#wblue {
+    width: 2vw;
+}
+
+.cols .heading {
+    text-align: center;
+    font-size: 2vw;
+    padding: 2% 0 2% 0;
+}
+.cols .heading p {
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+.heading p {
+    padding-top: 1%;
+}
+.cols .flex {
+    display: flex;
+    gap: 2%;
+    padding-left: 2%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.cols .flex .block p {
+    text-align: center;
+    padding-top: 1%;
+    font-size: 1vw;
+}
+
+.cols .flex .block img {
+    width: 14vw;
+}
+.cols .flex .block img:hover {
+    width: 18vw;
+    transition-duration: 0.5s;
+}
+.block {
+    align-items: center;
+    gap: 2%;
+}
+.grid {
+    padding-top: 1%;
+}
+.heading {
+    text-align: center;
+    padding-bottom: 1%;
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+.grid .row img {
+    width: 100%;
+}
+.grid {
+    position: relative;
+    padding: 1% 3% 11% 3%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1%;
+}
+.grid .row {
+    text-align: center;
+}
+.row .subrow {
+    text-align: left;
+    padding: 2% 0 3% 0;
+}
+.row .subrow p {
+    font-size: 1vw;
+}
+.row .image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+}
+.row .image-container {
+    /* width: 100%;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1%;
+    padding-bottom: 10%; */
+}
+.grid .row .subrow h4 {
+    padding: 1%;
+    font-size: 1.5vw;
+}
+.grid .row .subrow p {
+    padding: 1%;
+    font-size: 1.3vw;
+}
+.grid .row {
+    box-shadow: 0 4px 8px 0 rgba(131, 127, 127, 0.2);
+}
+.grid .row {
+    position: relative;
+}
+#like {
+    width: 2%;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border: 1px solid black;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 1%;
+}
+#heart {
+    width: 2%;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border: 1px solid black;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 1%;
+}
+.video {
+    position: relative;
+    text-align: center;
+}
+
+#bgvideo {
+    width: 100%;
+}
+.video .caption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: grid;
+    row-gap: 2%;
+    padding: 4% 0 0 0;
+}
+.video .caption p {
+    font-size: 1vw;
+    color: white;
+}
+.video .caption a img {
+    width: 40vw;
+}
+.video .play {
+    position: absolute;
+    top: 47%;
+    left: 49%;
+}
+#discover {
+    font-size: 1vw;
+    font-family: raleway;
+    font-weight: semibold;
+}
+#watchvd {
+    font-size: 1.5vw;
+    font-family: raleway;
+}
+
+.offer {
+    width: 100%;
+    position: relative;
+}
+#mountain {
+    width: 100%;
+}
+.offer .img-gradient {
+    position: relative;
+    z-index: 1;
+}
+.offer .main-img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: 1;
+    z-index: 1;
+}
+.offer .main-img img {
+    width: 100%;
+}
+.offer .ads {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+.offer .ads h1 {
+    font-size: 2vw;
+    color: white;
+    font-family: raleway;
+    padding-bottom: 1%;
+}
+.offer .ads p {
+    font-size: 1vw;
+    color: white;
+    font-family: raleway;
+    padding-bottom: 2%;
+}
+
+.offer .ads .fields input {
+    font-size: 1vw;
+    border-radius: 40px;
+    background-color: inherit;
+    border-color: white;
+    width: 20%;
+    padding: 0.5%;
+    border: 1px solid white;
+}
+.offer .ads .fields button {
+    font-size: 1vw;
+    border-radius: 40px;
+    background-color: white;
+    border-color: white;
+    color: hsl(164deg 66% 63%);
+    width: 8%;
+    padding: 0.5%;
+    font-family: raleway;
+    font-weight: bold;
+}
+
+.offer .ads .fields {
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+}
+.map {
+    width: 100%;
+}
+.map img {
+    width: 100%;
+}
+
+.footer {
+    width: 100%;
+    font-size: 1vw;
+    display: flex;
+    gap: 20%;
+    background-color: black;
+    color: white;
+    padding: 1% 0 1% 0;
+    font-family: raleway;
+    padding: 2% 0 2% 0;
+}
+.footer .pairs {
+    width: 73%;
+    display: flex;
+    gap: 20%;
+    justify-content: center;
+    color: grey;
+    font-size: 1.5vw;
+}
+.footer .pairs .links p {
+    padding: 3%;
+    width: 100%;
+    font-size: 0.8vw;
+}
+.footer .pairs .links p a {
+    text-decoration: none;
+    color: grey;
+}
+
+.footer .pairs .address p {
+    padding: 2%;
+    width: 100%;
+    font-size: 0.8vw;
+}
+.footer .subscribe .submit {
+    display: flex;
+}
+.footer .subscribe .submit input {
+    width: 40%;
+    padding: 1%;
+}
+
+.footer .subscribe p {
+    font-size: 0.9vw;
+    padding-bottom: 2.5%;
+}
+.footer .subscribe {
     width: 50%;
 }
-
-.posts ul {
-    padding: 0;
+.footer .subscribe input {
+    width: 20%;
+    font-size: 1vw;
+}
+.footer .subscribe button {
+    width: 5%;
+    font-size: 1vw;
+    background-color: #7dd9d2;
 }
 
-.posts li {
+.copyright {
+    background-color: black;
+    font-size: 1.5vw;
+    color: grey;
+    text-align: center;
+    padding: 2% 0 2% 0;
+    font-family: raleway;
+}
+.details {
+    margin: 2% 5% 2% 5%;
+    font-size: 1.5vw;
+    text-align: justify;
+}
+.details h3 {
+    padding: 0 0 2% 0%;
+}
+.location {
     position: relative;
-    display: flex;
-    border-bottom: 1px solid #ccc;
-    padding: 20px 40px;
-    list-style: none;
 }
-
-.posts li .menu_icon {
-    width: 20px;
-    height: 20px;
+.location .mapimage {
     position: absolute;
-    right: 30px;
-    top: 18px;
-    cursor: pointer;
-}
-
-.posts li .menu {
-    position: absolute;
-    top: 40px;
-    right: 15px;
-    border: 1px solid #ccc;
-    background-color: white;
-    padding: 10px 15px;
-    font-size: 13px;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.posts li img {
     width: 100%;
+    top: 44%;
+    text-align: center;
+}
+#listicon {
+    visibility: hidden;
 }
 
-.posts li .menu a {
-    text-decoration: none;
+@media screen and (max-width: 450px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1% 3% 77% 3%;
+    }
+    .video .caption a img {
+        width: 30vw;
+    }
+    #listicon {
+        visibility: visible;
+        width: 5vw;
+    }
+    .navbar {
+        visibility: hidden;
+    }
+    nav .logo {
+        width: 58%;
+    }
+    .navbar .list {
+        width: 18%;
+    }
 }
 
-.posts li .logo {
-    flex-basis: 15%;
+/*tourist attraction*****
+************************/
+.blur {
+    filter: blur(25px);
+    position: relative;
+}
+.index {
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+}
+.bg {
+    position: relative;
+}
+.zoom {
+    position: relative;
+}
+.zoom .index {
+    position: relative;
+}
+.zoom .close {
+    position: absolute;
+    top: 0;
+}
+.index a {
+    position: absolute;
+    right: 13%;
+    top: 3%;
 }
 
-.posts li .logo img {
-    width: 60%;
+/*ABOUT**************
+*******/
+.firstpage .gallery {
+    position: absolute;
+    display: flex;
+    top: 72%;
+    right: 3%;
+    gap: 2%;
 }
-
-.posts li .name_body {
-    flex-basis: 85%;
+.firstpage .gallery img {
+    width: 18vw;
 }
-
-.posts li .name_body .name {
+.firstpage .arrow {
+    position: absolute;
+    top: 89%;
+    left: 32%;
+}
+hr {
+    width: 100%;
+    color: white;
+    font-size: 0.8vw;
+}
+#quicklink {
     font-weight: bold;
-    margin-bottom: 10px;
+    color: white;
+    font-size: 1vw;
 }
-
-.posts li .name_body .body {
-    margin: 10px 0px;
+#addr {
+    font-weight: bold;
+    color: white;
+    font-size: 1vw;
 }
-
-.posts li .name_body .datetime {
-    color: gray;
-    margin-bottom: 10px;
+#wavywhite {
+    width: 2vw;
 }
-
-.no-post {
-    text-align: center;
+#off {
+    font-size: 2vw;
 }
-
-.no-post p {
-    margin: 0px 0px;
+#mapicon {
+    width: 3vw;
 }
-
-.loading {
-    text-align: center;
+#maincap {
+    color: white;
+}
+#arr {
+    width: 10vw;
+}
+.thumbnail .tmage img {
+    position: relative;
+}
+.thumbnail .like img {
+    position: absolute;
+    width: 2vw;
+    z-index: 1;
+    top: 0.5%;
+    right: 1%;
 }
