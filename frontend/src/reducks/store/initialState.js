@@ -1,5 +1,3 @@
-
-   
 const initialState = { 
     places: {
         list: []
@@ -7,12 +5,12 @@ const initialState = {
     categories: {
         list: [],
       },
-    favourites: {
+      favourites: {
         list: [],
-      }
+      },
     
     
 };
 
 
-export default initialState;
+export default initialState

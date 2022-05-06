@@ -4,5 +4,5 @@ const placesSelector = (state) => state.places;
 
 export const getPlaces = createSelector(
     [placesSelector],
-    state => state
+    state => state.list
 );

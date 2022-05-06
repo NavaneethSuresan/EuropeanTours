@@ -1,13 +1,11 @@
-import React from 'react';
-import Router from './Router';
-
-import './assets/style.css';
-import Header from './components/common/Header';
+import React from 'react'
+import Router from './Router'
+import "./assets/style.css"
 
 function App() {
-    return (
-     <Header/>,
-     <Router />
-    )}
+  return (
+    <Router />
+  );
+}
 
 export default App;

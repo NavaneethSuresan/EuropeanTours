@@ -5,17 +5,17 @@ export const FavourotesReducer = (state = initialState.favourites, action) => {
     case Actions.ADD_FAVOURITES:
       return {
         ...state,
-        list: action.payload,
+        list: action.list,
       };
     case Actions.FETCH_FAVOURITES:
       return {
         ...state,
-        list: action.payload,
+        list: action.list,
       };
     case Actions.DELETE_FAVOURITES:
       return {
         ...state,
-        list: action.payload,
+        list: action.list,
       };
     default:
       return state;

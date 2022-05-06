@@ -1,5 +1,3 @@
-
-   
 import API from "../../API";
 import {
   addFavouritesAction,

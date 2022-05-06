@@ -8,7 +8,7 @@ export const addCategoriesAction = (categories) => {
 export const FETCH_CATEGORY = "FETCH_CATEGORY";
 export const fetchCategoriesAction = (categories) => {
     return {
-        type: 'FETCH_CATEGORY',
+        type: FETCH_CATEGORY,
         payload: categories
     }
 }

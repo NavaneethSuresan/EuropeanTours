@@ -31,8 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
-
-
+# CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://127.0.0.1:3000', 'https://forum-prod-frontend.herokuapp.com']
 
 # Application definition
 
@@ -47,8 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.posts',
-    'apps.place',
-    'apps.category',
+    'apps.places',
+    'apps.categories',
     'cloudinary',
     'django_filters',
 ]
@@ -70,7 +69,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR,'templates'],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,13 +92,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'd3o1m8kk2e2psn',
-#         'USER': 'kqarpoaivedvqz',
+#         'NAME': 'd2dkjke3dqj0u9',
+#         'USER': 'ndkuxqibsacbwj',
 #         'PORT': 5432,
-#         'HOST': 'ec2-34-207-12-160.compute-1.amazonaws.com',
-#         'PASSWORD': 'a886275b6dc667d860d3fdbc708c5a07ec0375e9fd18c6ea1e4cea5d42fab19b',
+#         'HOST': 'ec2-52-200-28-255.compute-1.amazonaws.com',
+#         'PASSWORD': '1b8b62786623f60779bfa1850560762c848678cbd13f5e6243b2991f35be9234',
 #     }
 # }
+
 
 # Local Database
 DATABASES = {
@@ -158,14 +158,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 cloudinary.config(
-    cloud_name="techis",
-    api_key="886187759951178",
-    api_secret="WGcWrWfkPlxdOCdlFaLTdjSNtfo",
+    cloud_name="doruliswt",
+    api_key="276288652464616",
+    api_secret="L51LpfFMwB0g2tQgwW87jU3_9nA",
     secure=True
 )
 
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
