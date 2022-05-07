@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Imglike from "../../assets/img/Like_button.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { addFavourite } from "../../reducks/favourites/operations";
+import { addFavourite, deleteFavourite } from "../../reducks/favourites/operations";
 import { getFavourites } from "../../reducks/favourites/selectors";
+import heart from '../../assets/img/heart.svg'
 
 const Thumbnail = ({ place }) => {
   const dispatch = useDispatch();
@@ -20,6 +21,8 @@ const Thumbnail = ({ place }) => {
       setShowLikeButton(false);
     }
   }, [favourites]);
+
+  
   return (
     <>
       <div class="row">
@@ -29,13 +32,20 @@ const Thumbnail = ({ place }) => {
         <div className="subrow">
           <h4>{place.name}</h4>
           <p>{place.description}</p>
-          {showLikeButton && (
+          {(
             <img
               id="like"
               src={Imglike}
               onClick={() => {
-                clickFavourite(place);
+                setShowLikeButton(!showLikeButton)
+                if (showLikeButton){
+                clickFavourite(place) ;
+                }
+                else{
+                  dispatch(deleteFavourite(place.id));
+                }
               }}
+              style = {{backgroundColor: showLikeButton ? 'white' : 'red' }}
               alt=""
             />
           )}

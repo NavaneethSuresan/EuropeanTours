@@ -20,7 +20,11 @@ export const fetchFromLocalStorage = () => {
 export const addFavourite = (place) => {
   return async (dispatch, getState) => {
     let prevFavourites = getState().favourites.list;
-    const nextFavorites = [place, ...prevFavourites];
+    console.log("prevFavourites",place);
+    let nextFavorites = prevFavourites
+    if(!prevFavourites.some(favourite=>favourite.id === place.id)){
+    nextFavorites = [place, ...prevFavourites];
+    }
     setToLocalStorage(nextFavorites);
     dispatch(addFavouritesAction(nextFavorites));
   };

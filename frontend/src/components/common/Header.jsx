@@ -8,25 +8,6 @@ const Header = () => {
   const dispatch = useDispatch();
   return (
     <header>
-      {/* <nav class="navbar">
-        <div onClick={() => dispatch(push("/"))} class="logo">
-          <img src={ImgLogo} alt="" />
-          <div class="logotext">
-            Ethiopian <br />
-            Visitors
-          </div>
-        </div>
-
-        <div  class="menus">
-          <p>HOME</p>
-          <p>WONDERS IN EUROPE</p>
-          <p>TOURIST ATTRACTIONS</p>
-          <p onClick={() => dispatch(push("/favourites"))}>FAVOURITES</p>
-
-          <img src={ImgMenuicon} alt="" />
-        </div>
-      </nav> */}
-
       <nav>
         <div class="logo">
           <img src={ImgLogo} alt="" />

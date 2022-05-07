@@ -15,6 +15,8 @@ import { fetchCategories } from "../reducks/categories/operations";
 import { fetchFromLocalStorage } from "../reducks/favourites/operations";
 import way from "../assets/img/wavyblue.svg";
 
+import map from "../assets/img/MAP.png";
+
 const Home = () => {
   const dispatch = useDispatch();
   const selector = useSelector((state) => state);
@@ -44,27 +46,27 @@ const Home = () => {
           <p id="maincap">Happiest place on Earth!</p>
           <Search img={ImgSearchicon} />
         </div>
-        </section>
-        <section class="cols">
-          <div className="heading">
-            <p>Natural wonders in Europe</p>
-            <img src={way} alt="" />
-          </div>
-          <div className="flex">
-            {categories.map((category) => (
-              <GridContent key={category.id} category={category} />
-            ))}
-          </div>
-        </section>
-        <div class="heading">
-          <p>Tourist Attraction Places</p>
+      </section>
+      <section class="cols">
+        <div className="heading">
+          <p>Natural wonders in Europe</p>
           <img src={way} alt="" />
         </div>
-        <section class="grid">
-            {places.map((place) => (
-              <Thumbnail place={place} />
-            ))}
-        </section>
+        <div className="flex">
+          {categories.map((category) => (
+            <GridContent key={category.id} category={category} />
+          ))}
+        </div>
+      </section>
+      <div class="heading">
+        <p>Tourist Attraction Places</p>
+        <img src={way} alt="" />
+      </div>
+      <section class="grid">
+        {places.map((place) => (
+          <Thumbnail place={place} />
+        ))}
+      </section>
 
       <Footer />
     </>

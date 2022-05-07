@@ -8,6 +8,12 @@ import { useSelector } from "react-redux";
 import { getFavourites } from "../reducks/favourites/selectors";
 import { useEffect } from "react";
 import { fetchFromLocalStorage } from "../reducks/favourites/operations";
+import Imgbackground from "../assets/img/backgroundmaskimg.svg";
+import ImgSearchicon from "../assets/img/searchicon.png";
+import way from '../assets/img/wavyblue.svg'
+import { getCategories } from "../reducks/categories/selectors";
+import { fetchCategories } from "../reducks/categories/operations";
+import GridContent from "../components/common/GridContent";
 
 const Favourites = () => {
   const dispatch = useDispatch();
@@ -17,24 +23,52 @@ const Favourites = () => {
   useEffect(() => {
     dispatch(fetchFromLocalStorage());
   }, []);
+  const categories = getCategories(selector);
+ 
+  useEffect(() => {
+    dispatch(fetchCategories());
+    dispatch(fetchFromLocalStorage());
+  }, []);
 
   return (
-    <>
+     <>
       <Header />
-      <section class="section2">
-        <div class="gallery">
-          <Search />
+      <section class="firstpage">
+        <div className="background">
+          <img src={Imgbackground} alt="" />
         </div>
-        <div class="heading1">Favourites in Ethiopia</div>
-        <div class="grid">
+
+        <div className="shade"></div>
+        <div className="input">
+          <p id="maincap">Happiest place on Earth!</p>
+          <Search img={ImgSearchicon} />
+        </div>
+        </section>
+        <section class="cols">
+          <div className="heading">
+            <p>Natural wonders in Europe</p>
+            <img src={way} alt="" />
+          </div>
+          <div className="flex">
+            {categories.map((category) => (
+              <GridContent key={category.id} category={category} />
+            ))}
+          </div>
+        </section>
+        <div class="heading">
+          <p>Tourist Attraction Places</p>
+          <img src={way} alt="" />
+        </div>
+
+        <section class="grid">
           {favourites.map((favourite) => (
             <FavCard favourite={favourite} />
           ))}
-        </div>
       </section>
+
       <Footer />
     </>
   );
 };
 
-export default Favourites;
+export default Favourites
